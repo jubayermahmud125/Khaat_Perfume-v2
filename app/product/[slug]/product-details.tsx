@@ -29,7 +29,7 @@ export default function ProductDetails({ product, reviews }: ProductDetailsProps
       product_id: product.id,
       name: product.name,
       price: price,
-      image_url: product.image_url,
+      image_url: product.image_url ?? '',
       size: selectedSize,
       quantity,
       is_attar: product.is_attar,
@@ -53,7 +53,7 @@ export default function ProductDetails({ product, reviews }: ProductDetailsProps
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
           <div className="aspect-square bg-[#f3ece2] rounded-2xl overflow-hidden shadow-sm relative">
             <img
-              src={product.image_url}
+              src={product.image_url ?? ''}
               alt={product.name}
               className="w-full h-full object-cover object-center"
             />
@@ -82,7 +82,7 @@ export default function ProductDetails({ product, reviews }: ProductDetailsProps
                     className={`py-3 px-4 rounded-xl text-sm font-medium transition-all duration-200 text-center border ${
                       selectedSize === size
                         ? 'border-[#2c221e] bg-[#2c221e] text-white shadow-md'
-                        : 'border-[#e2d7c9] bg-white text-[#2c221e] hover:border-[#8c7a6b]'
+                        : 'border-[#e2d7c9] bg-[#ffffff] text-[#2c221e] hover:border-[#8c7a6b]'
                     }`}
                   >
                     {size}
