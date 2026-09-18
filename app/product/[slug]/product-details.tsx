@@ -27,12 +27,13 @@ export default function ProductDetails({ product, reviews }: ProductDetailsProps
   const handleAddToCart = () => {
     addItem({
       product_id: product.id,
-      name: product.name,
-      price: price,
+      product_name: product.name,
+      product_slug: product.slug,
       image_url: product.image_url ?? '',
       size: selectedSize,
       quantity,
-      is_attar: product.is_attar,
+      unit_price: price,
+      is_combo: false,
     });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
