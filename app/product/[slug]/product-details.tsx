@@ -27,7 +27,7 @@ export default function ProductDetails({ product, reviews }: ProductDetailsProps
   const handleAddToCart = () => {
     addItem({
       product_id: product.id,
-      title: product.title,
+      name: product.name,
       price: price,
       image_url: product.image_url,
       size: selectedSize,
@@ -54,7 +54,7 @@ export default function ProductDetails({ product, reviews }: ProductDetailsProps
           <div className="aspect-square bg-[#f3ece2] rounded-2xl overflow-hidden shadow-sm relative">
             <img
               src={product.image_url}
-              alt={product.title}
+              alt={product.name}
               className="w-full h-full object-cover object-center"
             />
           </div>
@@ -64,7 +64,7 @@ export default function ProductDetails({ product, reviews }: ProductDetailsProps
               <span className="text-xs uppercase tracking-widest text-[#8c7a6b]">
                 {product.is_attar ? 'Attar Collection' : 'Perfume Collection'}
               </span>
-              <h1 className="text-3xl font-serif text-[#2c221e] mt-1">{product.title}</h1>
+              <h1 className="text-3xl font-serif text-[#2c221e] mt-1">{product.name}</h1>
               <p className="text-2xl font-serif text-[#a3704c] mt-2">৳{price}</p>
             </div>
 
