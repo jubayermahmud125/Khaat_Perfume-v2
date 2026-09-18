@@ -25,7 +25,15 @@ export default function ProductDetails({ product, reviews }: ProductDetailsProps
   const price = getPriceForSize(product, selectedSize);
 
   const handleAddToCart = () => {
-    addItem({ product, size: selectedSize, quantity });
+    addItem({
+      product_id: product.id,
+      title: product.title,
+      price: price,
+      image_url: product.image_url,
+      size: selectedSize,
+      quantity,
+      is_attar: product.is_attar,
+    });
     setAdded(true);
     setTimeout(() => setAdded(false), 2000);
   };
