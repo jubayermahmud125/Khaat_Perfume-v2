@@ -24,11 +24,12 @@ export default function ProductDetails({ product, reviews }: ProductDetailsProps
 
   const price = getPriceForSize(product, selectedSize);
 
- const handleAddToCart = () => {
-  addItem(product, selectedSize, quantity);
-  setAdded(true);
-  setTimeout(() => setAdded(false), 2000);
-};
+  const handleAddToCart = () => {
+    addItem({ product, size: selectedSize, quantity });
+    setAdded(true);
+    setTimeout(() => setAdded(false), 2000);
+  };
+
   return (
     <div className="min-h-screen bg-[#faf7f2] flex flex-col">
       <Header />
