@@ -111,7 +111,7 @@ export function CartDrawer() {
                       <div className="flex items-center gap-2">
                         <button
                           aria-label="Decrease quantity"
-                         onClick={() => updateQuantity(item.id ?? '', item.quantity - 1)}
+                          onClick={() => updateQuantity(item.id ?? '', item.quantity - 1)}
                           className="w-6 h-6 flex items-center justify-center border border-border rounded-sm hover:border-gold transition-colors"
                         >
                           <Minus className="w-3 h-3" />
@@ -121,7 +121,7 @@ export function CartDrawer() {
                         </span>
                         <button
                           aria-label="Increase quantity"
-                          onClick={() => updateQuantity(item.id, item.quantity + 1)}
+                        onClick={() => updateQuantity(item.id ?? '', item.quantity - 1)}
                           className="w-6 h-6 flex items-center justify-center border border-border rounded-sm hover:border-gold transition-colors"
                         >
                           <Plus className="w-3 h-3" />
@@ -134,7 +134,7 @@ export function CartDrawer() {
                   </div>
                   <button
                     aria-label="Remove item"
-                    onClick={() => removeItem(item.id)}
+                    onClick={() => removeItem(item.id ?? '')}
                     className="text-foreground/30 hover:text-destructive transition-colors self-start"
                   >
                     <Trash2 className="w-4 h-4" />
